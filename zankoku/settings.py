@@ -84,8 +84,8 @@ DATABASES = {
 }
 
 
-database_url = os.environ.get("DATABASE_URL")
-DATABASES['default'] = dj_database_url.parse("database_url")
+
+DATABASES['default'] = dj_database_url.parse("postgresql://engineed_user:oTiCGeXiEaLFjtoyJAWdVzMaSxHgoBub@dpg-csmd5v3qf0us7380jmu0-a.oregon-postgres.render.com/engineed")
 
 
 # Password validation
