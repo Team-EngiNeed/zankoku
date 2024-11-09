@@ -37,9 +37,8 @@
                 </li>
                 <li class="navbar__btn">
                     <a
-                        href="#loginPopup"
+                        href="{% url 'login' %}"
                         class="button"
-                        onclick="openLoginPopup(); return false;"
                     >Log In</a>
                 </li>
             </ul>
@@ -67,7 +66,7 @@
                 <h2>Service</h2>
                 <p>Send a Ticket</p>
                 <button>
-                    <a href="#loginPopup" onclick="openLoginPopup(); return false;">Get Started</a>
+                    <a href="{% url 'login' %}">Get Started</a>
                 </button>
             </div>
             <div class="services__card">
@@ -80,27 +79,8 @@
         </div>
     </div>
 
-    <!--LOGIN POPUP-->
-    <div class="popup" id="loginPopup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closeLoginPopup()">&times;</span>
-            <h2>Log In</h2>
-            <div class="form-element">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter Email" />
-            </div>
-            <div class="form-element">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter Password" />
-            </div>
-            <div class="form-element">
-                <input type="checkbox" id="remember-me" />
-                <label for="remember-me">Remember me</label>
-            </div>
-            <button class="login-btn">Log In</button>
-        </div>
-    </div>
 
     <script src="{% static 'js/app.js' %}"></script>
+    
 </body>
 </html>

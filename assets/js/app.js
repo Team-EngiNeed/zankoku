@@ -16,9 +16,12 @@ function openLoginPopup() {
 }
 
 // Function to close the login popup
+// app.js
 function closeLoginPopup() {
-  document.getElementById('loginPopup').style.display = 'none';
+  const form = document.getElementById('form');
+  form.style.display = 'none'; // Hide the login form when close button is clicked
 }
+
 
 // Close the popup if the user clicks outside of it
 window.onclick = function(event) {

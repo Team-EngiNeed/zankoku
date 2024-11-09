@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <!-- Link to the static CSS -->
+    <link rel="stylesheet" href="{%static 'css/login.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+    />
+</head>
+<body>
+  <div class="wrapper__container">
+    <div class="wrapper">
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Full Name Field -->
+            <div class="form-element">
+                <label for="{{ form.full_name.id_for_label }}">Full Name</label>
+                {{ form.full_name }}
+            </div>
+
+            <!-- Grade & Section Field -->
+            <div class="form-element">
+                <label for="{{ form.grade_section.id_for_label }}">Grade & Section</label>
+                {{ form.grade_section }}
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-element">
+                <label for="{{ form.email.id_for_label }}">Email</label>
+                {{ form.email }}
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-element">
+                <label for="{{ form.password.id_for_label }}">Password</label>
+                {{ form.password }}
+            </div>
+
+            <div class="form-buttons">
+                <input type="reset" value="Clear">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+  </div>
+
+    <!-- JavaScript file link -->
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

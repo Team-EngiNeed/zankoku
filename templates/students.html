@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student</title>
+    <link rel="stylesheet" href="{% static 'css/students.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+    />
+</head>
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <div class="navbar__logo">
+                <img src="{% static 'images/ENGINEED LOGO.png' %}" alt="pic" id="navbar__logo" />
+            </div>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="{% url 'students' %}" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="{% url 'about' %}" class="navbar__links">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="{% url 'researchers' %}" class="navbar__links">The Researchers</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="" class="navbar__links">History</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="#submitTicket" class="button" onclick="openLoginPopup(); return false;">Submit a Ticket</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--MAIN-->
+    <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>EngiNeed</h1>
+                <p>Better and Safer Learning Space</p>
+                <button class="main__btn">
+                    <a href="#submitSection">Submit a Ticket</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--SUBMIT-->
+    <section class="submit_ticket" id="submitSection">
+        <div class="wrapper__container">
+            <div class="wrapper">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required placeholder="Example Juan Dela Cruz">
+
+                    <label for="gradeSection">Grade & Section</label>
+                    <input type="text" id="gradeSection" required placeholder="12-More">
+
+                    <label for="dateSubmitted">Date of Submission</label>
+                    <input type="date" id="dateSubmitted" required>
+
+                    <label for="damagedProperty">Damaged Property</label>
+                    <select id="damagedProperty" required>
+                        <option value="" disabled selected>Select an item</option>
+                        <option value="electricFan">Electric Fan</option>
+                        <option value="table">Table</option>
+                        <option value="chair">Chair</option>
+                        <option value="board">Board</option>
+                        <option value="lightBulb">Light Bulb</option>
+                        <option value="switch">Switch</option>
+                        <option value="outlet">Outlet</option>
+                        <option value="projector">Projector</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="file">File:</label>
+                    <input type="file" id="file" accept="image/png, image/jpg, image/jpeg">
+
+                    <label for="comments">Comment</label>
+                    <textarea rows="3" id="comments" cols="25" placeholder="Please input here the [other] if applicable"></textarea>
+
+                    <div class="form-buttons">
+                        <input type="reset" value="Clear">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--script-->
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>
